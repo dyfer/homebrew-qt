@@ -14,11 +14,6 @@ class QtAT5150 < Formula
     "qt"
   end
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   bottle do
     cellar :any
     root_url "https://homebrew.bintray.com/bottles"
