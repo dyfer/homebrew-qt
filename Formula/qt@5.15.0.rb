@@ -14,6 +14,12 @@ class QtAT5150 < Formula
     "qt"
   end
 
+  # the following cause an error on older versions of homebrew
+  # livecheck do
+  #   url :head
+  #   regex(/^v?(\d+(?:\.\d+)+)$/i)
+  # end
+
   bottle do
     cellar :any
     root_url "https://homebrew.bintray.com/bottles"
@@ -34,11 +40,11 @@ class QtAT5150 < Formula
 
   # Fix build on Linux when the build system has AVX2
   # Patch submitted at https://codereview.qt-project.org/c/qt/qt3d/+/303993
-  patch do
-    url "https://codereview.qt-project.org/gitweb?p=qt/qt3d.git;a=patch;h=b456a7d47a36dc3429a5e7bac7665b12d257efea"
-    sha256 "e47071f5feb6f24958b3670d83071502fe87243456b29fdc731c6eba677d9a59"
-    directory "qt3d"
-  end
+  # patch do
+  #   url "https://codereview.qt-project.org/gitweb?p=qt/qt3d.git;a=patch;h=b456a7d47a36dc3429a5e7bac7665b12d257efea"
+  #   sha256 "e47071f5feb6f24958b3670d83071502fe87243456b29fdc731c6eba677d9a59"
+  #   directory "qt3d"
+  # end
 
   def install
     args = %W[
